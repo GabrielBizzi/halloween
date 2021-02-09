@@ -1,0 +1,436 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    background: rgb(54,5,84);
+    background: -moz-linear-gradient(0deg, rgba(54,5,84,1) 0%, rgba(81,19,110,1) 35%, rgba(106,35,139,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(54,5,84,1) 0%, rgba(81,19,110,1) 35%, rgba(106,35,139,1) 100%);
+    background: linear-gradient(0deg, rgba(54,5,84,1) 0%, rgba(81,19,110,1) 35%, rgba(106,35,139,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#360554",endColorstr="#6a238b",GradientType=1);
+}
+
+:root {
+    --navbar-dark: #000000;
+    --color-default: #ffffff;
+    --color-primary: #FF8500;
+    --color-primary-dark: #F75400;
+    --alternative-color-secundary: #290B4F;
+    --color-secundary: #616161;
+    --border-color-primary: #eaeaea;
+    --color-secundary-light: #7153BB;
+    --color-footer-link: #687077;
+    --color-footer-title: #3c72b4;
+    font-size: 60%;
+}
+
+.root {
+    width: 100vw;
+
+    .form-control {
+        border: none !important;
+    }
+
+    // Navbar
+
+    nav.navbar {
+        background-color: var(--navbar-dark);
+        img#logo {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            width: 100%;
+        }
+
+        div.search {
+            height: 4.5rem;
+            width: 100%;
+            border: none !important;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            input {
+                outline: none;
+                border-color: none;
+                outline: none;
+                padding: 0 2rem;
+                font-size: 1.4rem;
+                border-radius: 0.7rem;
+                &:focus, &:hover {
+                    outline: none;
+                    border-color: none;
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+            button {
+                background-color: var(--color-primary);
+                outline: none;
+                border-radius: 0.7rem;
+                border: none !important;
+                padding: 0.5rem 1.5rem;
+                &:focus, &:hover {
+                    outline: none;
+                }
+            }
+        }
+
+        img#cart {
+            width: 30%;
+        }
+
+    }
+
+    div.jumbotron.jumbotron-fluid {
+        height: 250px;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        width: auto;
+        .content {
+            flex-direction: column;
+            margin: auto !important;
+            display: flex !important;
+            img {
+                width: 100%;
+                max-width: 650px;
+                min-width: 300px;
+            }
+            p{
+                font-size: 1.8rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-top: 1.2rem;
+                &:nth-of-type(1) {
+                    color: var(--color-default);
+                }
+                &:nth-of-type(2) {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+    div.group-buttons {
+        margin-top: -17px;
+        position: absolute;
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        .choose {
+            display: none;
+        }
+        .content-group {
+            display: flex;
+            flex-direction: row ;
+            align-items: center;
+        }
+        .option-menu {
+            
+            transition: .5s;
+            position: relative;
+            top: -17px;
+            button {
+                padding: 0.8rem 3.0rem;
+                font-size: 1.6rem;
+                font-weight: 400;
+                border-radius: 50rem;
+                width: 100% !important;
+                height: auto;
+                background: var(--alternative-color-secundary);
+                color: var(--color-default);
+            }
+            .left-bat {
+                position: absolute;
+                left: -25px;
+                width: 70px;
+                top: -10px;
+                transform: scale(0.2);
+                display: none;
+            }
+            .right-bat {
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                transform: scale(0.2);
+                top: -10px;
+                display: none;
+            }
+            &:hover {
+               button  {background: var(--color-primary-dark);}
+                .left-bat {
+                    display: block;
+                    animation: scale-hover both cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+                }
+                .right-bat {
+                    display: block;
+                    animation: scale-hover both cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+                }
+            }
+        }
+        button + button{
+            margin-left: 1.6rem;
+        }
+    }
+    div.box-container {
+        width: 100%;
+        padding-top: 8rem;
+        .header-box {
+            margin-bottom: -12.5rem;
+            text-align: center;
+        }
+        .body-box {
+            background: var(--color-secundary-light);
+            padding: 16rem 2.2rem 2rem 2.2rem;
+            width: 100%;
+            border-radius: 2.5rem;
+            h2 {
+                font-size: 2.8rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: var(--color-primary);
+            }
+            p {
+                font-size: 2rem;
+                color: var(--color-default);
+            }
+            button {
+                font-size: 2rem;
+                border-radius: 2.5rem;
+                background: var(--alternative-color-secundary);
+                color: var(--color-default);
+                padding: 0.2rem 2.2rem;
+                transition: background .5s;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                &:focus {
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                }
+                &:hover {
+                    background: var(--color-primary-dark);
+                }
+            }
+        }
+    }
+    div.list-cart {
+        margin: 5rem 0rem;
+        .container {
+            background: var(--color-default);
+            border-radius: 1rem;
+            padding: 1rem 2.6rem;
+            
+            .product {
+                padding: 2.0rem 1.0rem;
+                border-bottom: 1px solid var(--border-color-primary);
+                
+                &:hover {
+                    button{
+                        display: block;
+                        animation: inside-off;
+                    }
+                }
+                a {
+                    h2 {
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                    }
+                    color: var(--navbar-dark);
+                    text-decoration: none;
+                    text-transform: none;
+                }
+                span {
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                }
+                button {
+                    display: none;
+                    transition: .5s;
+                    animation: 1s inside-off both;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    footer {
+        .container {
+            border-bottom: 1px solid var(--border-color-primary);
+            a {
+                text-decoration: none;
+                font-size: 1.6rem;
+                color: var(--color-footer-link) !important;
+                font-weight: 400;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .title-footer {
+                font-weight: 600;
+                font-size: 1.5rem;
+                color: var(--color-footer-title);
+            }
+        }
+    }
+}
+
+@keyframes scale-hover {
+    0% {
+        transform: scale(0.2) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes inside-off {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    div.group-buttons {
+        margin-top: -17px;
+        position: absolute;
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+
+        div.choose {
+            display: block !important;
+        }
+
+        .content-group {
+            flex-direction: column;
+            align-items: center;
+            display: none !important;
+        }
+
+        .option-menu {
+            transition: .5s;
+            position: relative;
+            top: -17px;
+            button {
+                padding: 0.8rem 3.0rem;
+                font-size: 1.6rem;
+                font-weight: 400;
+                border-radius: 50rem;
+                width: 100% !important;
+                height: auto;
+                background: var(--alternative-color-secundary);
+                color: var(--color-default);
+            }
+            .left-bat {
+                position: absolute;
+                left: -25px;
+                width: 70px;
+                top: -10px;
+                transform: scale(0.2);
+                display: none;
+            }
+            .right-bat {
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                transform: scale(0.2);
+                top: -10px;
+                display: none;
+            }
+            &:hover {
+               button  {background: var(--color-primary-dark);}
+                .left-bat {
+                    display: block;
+                    animation: scale-hover both cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+                }
+                .right-bat {
+                    display: block;
+                    animation: scale-hover both cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+                }
+            }
+        }
+        button + button{
+            margin-left: 1.6rem;
+        }
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    img#cart {
+        display: none;
+    }
+
+    img#logo {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 578px) {
+    div.group-buttons {
+        margin-top: -17px;
+        position: absolute;
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+
+        div.choose {
+            display: block !important;
+            width: 40%;
+        }
+
+        .content-group {
+            flex-direction: column;
+            align-items: center;
+            display: none !important;
+        }
+
+        .option-menu {
+            transition: .5s;
+            position: relative;
+            top: -17px;
+            button {
+                padding: 0.8rem 3.0rem;
+                font-size: 1.6rem;
+                font-weight: 400;
+                border-radius: 50rem;
+                width: 100% !important;
+                height: auto;
+                background: var(--alternative-color-secundary);
+                color: var(--color-default);
+            }
+            .left-bat {
+                position: absolute;
+                left: -25px;
+                width: 70px;
+                top: -10px;
+                transform: scale(0.2);
+                display: none;
+            }
+            .right-bat {
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                transform: scale(0.2);
+                top: -10px;
+                display: none;
+            }
+            &:hover {
+               button  {background: var(--color-primary-dark);}
+                .left-bat {
+                    display: block;
+                    animation: scale-hover both cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+                }
+                .right-bat {
+                    display: block;
+                    animation: scale-hover both cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+                }
+            }
+        }
+        button + button{
+            margin-left: 1.6rem;
+        }
+    }
+}
